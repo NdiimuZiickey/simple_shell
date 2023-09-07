@@ -8,13 +8,23 @@
 int main(int argc, char *argv[])
 {
 	char *shell = "shell $ ";
-	char *lineptr;
+	char *lineptr = NULL;
 	size_t n = 0;
+	ssize_t eof;
 	(void)argc, (void)argv;
 
-	printf("%s", shell);
-	getline(&lineptr, &n, stdin);
-	printf("%s", lineptr);
-	free(lineptr);
+	while (1)
+	{
+		printf("%s", shell);
+		eof = getline(&lineptr, &n, stdin);
+		if (eof == -1)
+		{
+			printf("exit...\n");
+			return (-1);
+		}
+		printf("%s", lineptr);
+		free(lineptr);
+		lineptr = NULL;
+	}
 	return (0);
 }
