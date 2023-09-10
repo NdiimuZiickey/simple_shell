@@ -40,10 +40,11 @@ int main(void)
 			{
 				words[i] = malloc(sizeof(char) * strlen(word));
 				strcpy(words[i], word);
-				printf(">>>%s\n", words[i]);
 				word = strtok(NULL, dm);
 			}
 			words[i] = NULL;
+
+			exec(words);
 
 
 			free(words);
