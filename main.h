@@ -9,7 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 void exec(char **words);
-
+char *get_path( char *command);
 
 
 
