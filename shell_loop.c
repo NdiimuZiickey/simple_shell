@@ -36,12 +36,12 @@ char *without_comment(char *in)
 }
 
 /**
- * shelloop - Loop of shell
+ * shell_loop - Loop of shell
  * @datash: data relevant (av, input, args)
  *
  * Return: no return.
  */
-void loop(data_shell *datash)
+void shell_loop(data_shell *datash)
 {
 	int loop, i_eof;
 	char *input;
